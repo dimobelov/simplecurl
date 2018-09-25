@@ -25,7 +25,7 @@ class curl {
      * @param $headers
      * @param $query
      */
-    public static function prepare($url, $headers, $query) {
+    public static function prepare($url, $query, $headers = array()) {
         self::$url = $url;
         self::$headers = $headers;
         self::$query = http_build_query($query);

@@ -10,17 +10,17 @@
 require_once 'curl/curl.php';
 use simple_curl\curl;
 
-$url = 'https://api.robi.com.bd/fnf/v1/getFNFList';
+$url = 'https://newsapi.org/v2/top-headlines';
 
 $headers = (array(
-    'Content-Type: application/json',
-    'Authorization: Bearer 5217d663-0230-31b4-baf6-9df96f3a33a2'
+
 ));
 
 $query = (array(
-    'msisdn' =>'8801633764751'
+    'sources' =>'bbc-news',
+    'apiKey' => 'b9a97e06d1654226aa022493b4233a60'
 ));
 
-curl::prepare($url, $headers, $query);
+curl::prepare($url, $query);
 curl::exec_get();
 print_r(curl::get_response_assoc());
